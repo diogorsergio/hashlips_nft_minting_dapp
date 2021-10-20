@@ -8,7 +8,9 @@ const now = new Date();
 const targetDate = new Date("2021-12-20T08:37:00.000Z");
 
 export const App = () => {
-  const [show, setShow] = useState(false);
+  const isBefore = targetDate.getTime() - now.getTime();
+  console.log(isBefore)
+  const [show, setShow] = useState(!(isBefore > 0));
 
   if (show) {
     return (
